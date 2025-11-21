@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orlov Logistics — Поставки из Китая</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=glass3" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="brand">
+          <img src="images/logo.png" alt="ORLOV LOGISTICS" class="brand-logo" />
+        </div>
+        <nav class="nav">
+          <a href="#services">Услуги</a>
+          <a href="#delivery">Доставка</a>
+          <a href="#team-advanced">Команда</a>
+          <a href="#reviews-clients">Отзывы</a>
+        </nav>
+        <div class="header-actions">
+          <a href="https://wa.me/" class="social" aria-label="WhatsApp" target="_blank" rel="noopener"><img src="assets/icons/Whatsapp.svg" alt="WhatsApp" /></a>
+          <a href="https://t.me/" class="social" aria-label="Telegram" target="_blank" rel="noopener"><img src="assets/icons/tg.svg" alt="Telegram" /></a>
+          <a href="#contact" class="btn btn-yellow">Оставить заявку</a>
+          <button class="nav-toggle" aria-label="Открыть меню"><span class="nav-icon"></span></button>
+        </div>
+      </div>
+      <div class="nav-drawer" aria-hidden="true">
+        <div class="nav-drawer-inner">
+          <button class="nav-close" aria-label="Закрыть меню">×</button>
+          <nav class="nav-mobile">
+            <a href="#services">Услуги</a>
+            <a href="#delivery">Доставка</a>
+            <a href="#team-advanced">Команда</a>
+            <a href="#reviews-clients">Отзывы</a>
+          </nav>
+          
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <img class="hero-map" src="images/map.png" alt="map" />
+      <div class="container hero-content">
+        <div class="hero-panel">
+          <h1 class="hero-title">Безопасные поставки из Китая     полный контроль на каждом этапе</h1>
+          <ul class="hero-list">
+            <li>Найдём фабрику и проверим поставщика</li>
+            <li>Закупим товар и проверим на брак</li>
+            <li>Доставим: официально с документами или альтернативно — по запросу клиента</li>
+          </ul>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-yellow">Рассчитать доставку</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    
+    
+
+    
+    <section class="promo-slider">
+      <div class="container">
+        <div class="slides">
+          <div class="slide slide--shipping active">
+            <div class="slide-lead">
+              <div class="lead-title">Быстрая доставка</div>
+              <div class="lead-sub">Любыми способами</div>
+            </div>
+            <div class="slide-items">
+              <div class="slide-item">
+                <span class="icon-bubble"><img src="assets/icons/plane.svg" alt="Авиа" /></span>
+                <div class="item-text"><b>Авиа</b><span>До 6 дней</span></div>
+              </div>
+              <div class="slide-item">
+                <span class="icon-bubble"><img src="assets/icons/truck.svg" alt="Авто" /></span>
+                <div class="item-text"><b>Авто</b><span>10–14 дней</span></div>
+              </div>
+              <div class="slide-item">
+                <span class="icon-bubble"><img src="assets/icons/train.svg" alt="Ж/Д" /></span>
+                <div class="item-text"><b>Ж/Д</b><span>От 25 дней</span></div>
+              </div>
+              <div class="slide-item">
+                <span class="icon-bubble"><img src="assets/icons/ship.svg" alt="Морем" /></span>
+                <div class="item-text"><b>Морем</b><span>От 40 дней</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="slide slide--services">
+            <div class="slide-lead">
+              <div class="lead-title">Предоставляем бесплатно</div>
+            </div>
+            <div class="slide-items slide-items-wide">
+              <div class="slide-item">
+                <span class="icon-bubble"><img src="assets/icons/1.svg" alt="Аутсорсинг ВЭД" /></span>
+                <div class="item-text"><b>Аутсорсинг ВЭД</b></div>
+              </div>
+              <div class="slide-item">
+                <span class="icon-bubble"><img src="assets/icons/2.svg" alt="Таможенное оформление" /></span>
+                <div class="item-text"><b>Таможенное оформление</b></div>
+              </div>
+              <div class="slide-item">
+                <span class="icon-bubble"><img src="assets/icons/3.svg" alt="Складской сервис" /></span>
+                <div class="item-text"><b>Складской сервис</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="promo-dots" class="video-dots"></div>
+      </div>
+    </section>
+
+    
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="section-title">Наши услуги</h2>
+        <p class="section-sub">Обеспечиваем полный цикл сопровождения: от выбора товара до его поставки на ваш склад или маркетплейс</p>
+        <div class="carousel">
+          <div class="carousel-track" id="services-track">
+            <div class="card">
+              <div class="card-media"><img src="images/1.jpg" alt="Карго доставка" /></div>
+              <div class="service-caption"><h3>Карго доставка</h3><p>Гибкие маршруты. Консолидация. Контроль на каждом этапе.</p></div>
+            </div>
+            <div class="card">
+              <div class="card-media"><img src="images/2.png" alt="Официальная доставка" /></div>
+              <div class="service-caption"><h3>Официальная доставка</h3><p>Полный пакет документов, таможенное оформление.</p></div>
+            </div>
+            <div class="card">
+              <div class="card-media"><img src="images/3.jpg" alt="Поиск фабрики/поставщика" /></div>
+              <div class="service-caption"><h3>Поиск фабрики / поставщика</h3><p>Собственная база, проверка мощностей и репутации.</p></div>
+            </div>
+            <div class="card">
+              <div class="card-media"><img src="images/4.jpg" alt="Инспекция товара" /></div>
+              <div class="service-caption"><h3>Инспекция товара</h3><p>Выезд на фабрику, проверка качества, фото/видео отчёт.</p></div>
+            </div>
+            <div class="card">
+              <div class="card-media"><img src="images/5.jpg" alt="Платёжный агент" /></div>
+              <div class="service-caption"><h3>Платёжный агент</h3><p>Оплата поставщикам напрямую. Безопасные расчёты.</p></div>
+            </div>
+            <div class="card">
+              <div class="card-media"><img src="images/6.jpg" alt="OEM / ODM" /></div>
+              <div class="service-caption"><h3>OEM / ODM брендирование</h3><p>Бесплатное базовое брендирование под ваши требования.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section id="workflow" class="section">
+      <div class="container">
+        <h2 class="section-title">Этапы работы</h2>
+        <div class="steps-grid">
+          <div class="work-card reveal">
+            <div class="work-media"><img src="images/Poluchaem-Zapros.png" alt="Получаем запрос" /></div>
+            <div class="work-content">
+              <h3 class="work-title">Получаем запрос</h3>
+              <p class="work-sub">Клиент присылает таблицу, фото или описание. Уточняем детали перед поиском фабрики.</p>
+            </div>
+            <span class="work-badge">1</span>
+          </div>
+          <div class="work-card reveal">
+            <div class="work-media"><img src="images/Ishem-postavshka.png" alt="Ищем поставщика" /></div>
+            <div class="work-content">
+              <h3 class="work-title">Ищем поставщика</h3>
+              <p class="work-sub">3–5 дней бесплатного/ускоренного поиска с проверкой мощностей и репутации.</p>
+            </div>
+            <span class="work-badge">2</span>
+          </div>
+          <div class="work-card reveal">
+            <div class="work-media"><img src="images/Obrazcy.png" alt="Согласовываем образцы" /></div>
+            <div class="work-content">
+              <h3 class="work-title">Согласовываем образцы</h3>
+              <p class="work-sub">Фото/видео продукции или физический образец по запросу клиента.</p>
+            </div>
+            <span class="work-badge">3</span>
+          </div>
+          <div class="work-card reveal">
+            <div class="work-media"><img src="images/Zakupaem-tovar.png" alt="Закупаем товар" /></div>
+            <div class="work-content">
+              <h3 class="work-title">Закупаем товар</h3>
+              <p class="work-sub">От нескольких дней для складской продукции, 4–8 недель для кастомизации.</p>
+            </div>
+            <span class="work-badge">4</span>
+          </div>
+          <div class="work-card reveal">
+            <div class="work-media"><img src="images/Priemka.png" alt="Приёмка на складе" /></div>
+            <div class="work-content">
+              <h3 class="work-title">Приёмка на складе</h3>
+              <p class="work-sub">Проверка, переупаковка, финальная инспекция количества и качества, маркировка.</p>
+            </div>
+            <span class="work-badge">5</span>
+          </div>
+          <div class="work-card reveal">
+            <div class="work-media"><img src="images/otpravka.png" alt="Отправка" /></div>
+            <div class="work-content">
+              <h3 class="work-title">Отправка</h3>
+              <p class="work-sub">Авиа 5–7 дней, авто 12–25 дней, морской 30–50 дней. Контейнер/авто/авиа.</p>
+            </div>
+            <span class="work-badge">6</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section id="types" class="section">
+      <div class="container">
+        <div class="types-panel">
+          <div class="types-right types-right--single">
+            <div class="type-rotator">
+              <div class="rot-item active">
+                <img src="images/moving-boxes-truck.jpg" alt="Малогабаритные грузы" />
+                <div class="type-label">Малогабаритные грузы</div>
+              </div>
+              <div class="rot-item">
+                <img src="images/truck-shipping-port.jpg" alt="Контейнерные перевозки" />
+                <div class="type-label">Контейнерные перевозки</div>
+              </div>
+              <div class="rot-item">
+                <img src="images/transport-logistics-concept.jpg" alt="Крупногабаритные грузы" />
+                <div class="type-label">Крупногабаритные грузы</div>
+              </div>
+              <div class="rot-item">
+                <img src="images/young-man-working-warehouse-with-boxes.jpg" alt="Сборные грузы" />
+                <div class="type-label">Сборные грузы</div>
+              </div>
+            </div>
+          </div>
+          <div class="types-left">
+            <h2 class="types-title"><span class="hl-blue">Доставляем</span> <span class="hl-yellow">любые виды грузов</span> из Китая</h2>
+            <p class="types-desc">Поможем найти, оплатить и доставить товары на лучших условиях.</p>
+            <a href="#contact" class="btn btn-yellow">Узнать стоимость доставки</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="who" class="section">
+      <div class="container">
+        <h2 class="section-title">С кем мы работаем</h2>
+        <p class="section-sub">Помогаем расти бизнесу любого масштаба</p>
+        <div class="who-grid">
+          <div class="who-card who-card--marketplaces">
+            <div class="who-content">
+              <h3>С предпринимателями, которые продают на маркетплейсах</h3>
+            </div>
+            <div class="who-icons">
+              <img src="assets/icons/ozon.svg" alt="Ozon" />
+              <img src="assets/icons/wb.svg" alt="WB" />
+              <img src="assets/icons/yandex.svg" alt="Яндекс Маркет" />
+              <img src="assets/icons/avito.svg" alt="Avito" />
+              <img src="assets/icons/telegram.svg" alt="Telegram" />
+            </div>
+          </div>
+          <div class="who-card who-card--overlay">
+            <div class="type-media"><img src="images/Mask group.png" alt="Склад и упаковка" /></div>
+            <div class="who-overlay">
+              <h3>С интернет‑магазинами и сообществами</h3>
+              <p>Помогаем предпринимателям получать грузы из Китая быстро, надёжно и с удобной логистикой для онлайн‑продаж.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="delivery" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Как доставляем грузы из Китая</h2>
+        <p class="section-sub">Мы подбираем оптимальный маршрут под ваш товар, сроки и бюджет. Все грузы проходят контроль на нашем складе в Китае и доставляются «под ключ» до России.</p>
+        <div class="deliver-grid">
+          <a class="deliver-card reveal" href="#contact">
+            <img class="deliver-media" src="images/koncepcia-transporta-i-logistiki (2) 1.png" alt="Авиа" />
+            <span class="deliver-caption">Авиа · 5–8 дней</span>
+            <div class="deliver-info">
+              <span class="deliver-icon"><img src="assets/icons/plane.svg" alt="Авиа" /></span>
+              <p>Самый быстрый способ. Подходит для срочных и ценных отправлений, образцов и мелких партий.<br />
+              <b>Срок:</b> от 5–8 дней.<br />
+              <b>Преимущество:</b> скорость и минимальные риски.</p>
+            </div>
+          </a>
+          <a class="deliver-card reveal" href="#contact">
+            <img class="deliver-media" src="images/koncepcia-transporta-i-logistiki (3) 1.png" alt="Авто транспорт" />
+            <span class="deliver-caption">Авто · 10–20 дней</span>
+            <div class="deliver-info">
+              <span class="deliver-icon"><img src="assets/icons/truck.svg" alt="Авто" /></span>
+              <p>Баланс между скоростью и стоимостью. Удобно для крупных партий, электроники, одежды, мебели.<br />
+              <b>Срок:</b> от 12–20 дней (в зависимости от маршрута).<br />
+              <b>Преимущество:</b> доставка «до двери», гибкая логистика.</p>
+            </div>
+          </a>
+          <a class="deliver-card reveal" href="#contact">
+            <img class="deliver-media" src="images/otgruzka-gruzovyh-konteinerov-zeleznodoroznym-transportom.png" alt="Железная дорога (Ж/Д)" />
+            <span class="deliver-caption">Ж/Д · 18–28 дней</span>
+            <div class="deliver-info">
+              <span class="deliver-icon"><img src="assets/icons/train.svg" alt="Ж/Д" /></span>
+              <p>Оптимальный вариант для стабильных поставок и крупнотоннажных грузов.<br />
+              <b>Срок:</b> от 18–28 дней.<br />
+              <b>Преимущество:</b> надёжность и предсказуемость сроков.</p>
+            </div>
+          </a>
+          <a class="deliver-card reveal" href="#contact">
+            <img class="deliver-media" src="images/bol-soi-transportnyi-korabl-s-konteinerami-s-tovarami-v-otkrytom-more.png" alt="Морем" />
+            <span class="deliver-caption">Морем · 35–50 дней</span>
+            <div class="deliver-info">
+              <span class="deliver-icon"><img src="assets/icons/ship.svg" alt="Морем" /></span>
+              <p>Самая экономичная доставка. Подходит для габаритных, тяжёлых или не срочных товаров.<br />
+              <b>Срок:</b> от 35–50 дней.<br />
+              <b>Преимущество:</b> низкая стоимость перевозки.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="packaging" class="section">
+      <div class="container">
+        <h2 class="section-title">Виды упаковки</h2>
+        <p class="section-sub">Мы не просто упаковываем груз — обеспечиваем его надёжную защиту.</p>
+        <div class="pack-grid">
+          <a class="pack-card reveal" href="#contact">
+            <div class="pack-body">
+              <img class="pack-media" src="images/upakovka-1.png" alt="Упаковка в скотч" />
+              <h3 class="pack-title">Упаковка в скотч</h3>
+              <span class="pack-price">5$ за одно место</span>
+              <div class="pack-overlay"><p class="pack-desc">Обеспечивает защиту от повреждений и удобна для транспортировки.</p></div>
+            </div>
+          </a>
+          <a class="pack-card reveal" href="#contact">
+            <div class="pack-body">
+              <img class="pack-media" src="images/upakovka-2.png" alt="Картонные уголки" />
+              <h3 class="pack-title">Картонные уголки</h3>
+              <span class="pack-price">5$ за одно место</span>
+              <div class="pack-overlay"><p class="pack-desc">Защищает хрупкие товары, обеспечивает надёжную фиксацию.</p></div>
+            </div>
+          </a>
+          <a class="pack-card reveal" href="#contact">
+            <div class="pack-body">
+              <img class="pack-media" src="images/upakovka-3.png" alt="Обрешётка" />
+              <h3 class="pack-title">Обрешётка</h3>
+              <span class="pack-price">5$ за одно место</span>
+              <div class="pack-overlay"><p class="pack-desc">Прочна и долговечна, защищает от внешних воздействий.</p></div>
+            </div>
+          </a>
+          <a class="pack-card reveal" href="#contact">
+            <div class="pack-body">
+              <img class="pack-media" src="images/upakovka-4.png" alt="Деревянный ящик 2,5 куб" />
+              <h3 class="pack-title">Деревянный ящик 2,5 куб</h3>
+              <span class="pack-price">5$ за одно место</span>
+              <div class="pack-overlay"><p class="pack-desc">Доп. защита от механических повреждений, стабильность груза.</p></div>
+            </div>
+          </a>
+        </div>
+      </div>
+  </section>
+  
+  <section id="warehouses" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Преимущества наших складов <span class="grad-text"></span></h2>
+      <div class="ware-grid">
+        <div class="ware-left">
+          <ul class="pill-list">
+            <li class="pill"><span class="pill-icon"><img src="assets/icons/hranenie.svg" alt="Хранение" /></span><span>Бесплатное хранение грузов</span></li>
+            <li class="pill"><span class="pill-icon"><img src="assets/icons/proverka.svg" alt="Проверка" /></span><span>Проверка на брак</span></li>
+            <li class="pill"><span class="pill-icon"><img src="assets/icons/upakovka.svg" alt="Упаковка" /></span><span>Упаковка</span></li>
+            <li class="pill"><span class="pill-icon"><img src="assets/icons/spory.svg" alt="Споры" /></span><span>Урегулирование споров с поставщиками</span></li>
+            <li class="pill"><span class="pill-icon"><img src="assets/icons/strahovanie.svg" alt="Страхование" /></span><span>Страхование документов</span></li>
+          </ul>
+        </div>
+        <div class="ware-right">
+          <div class="ware-photo">
+            <img src="images/boxes-arrangement-logistic-center (1).jpg" alt="Склад в Китае" />
+            <div class="ware-caption">Склад в Фошане</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="consult" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Получить персональный расчёт и консультацию</h2>
+      <p class="section-sub">Мы поможем найти, оплатить, доставить товары из Китая <b>на самых выгодных условиях.</b></p>
+      <div class="consult-action">
+        <a href="#contact" class="btn btn-grad">Получить консультацию</a>
+        <img src="assets/icons/image33.svg" alt="" class="consult-line" />
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews-video" class="section">
+    <div class="container">
+      <h2 class="section-title">Что происходит на наших складах?</h2>
+      <div class="video-grid">
+        <div class="video-card" data-video="5a3db0def7370790901aab1e6328f949?p=whTuy3dTqpqxhJKIQzt2eg">
+          <img class="video-thumb" src="images/photo_2025-10-27 22.57.21 1.jpg" alt="Видео 1" />
+          <span class="video-play"></span>
+        </div>
+        <div class="video-card" data-video="5a3db0def7370790901aab1e6328f949?p=whTuy3dTqpqxhJKIQzt2eg">
+          <img class="video-thumb" src="images/photo_2025-10-27 22.57.23 1.jpg" alt="Видео 2" />
+          <span class="video-play"></span>
+        </div>
+        <div class="video-card" data-video="5a3db0def7370790901aab1e6328f949?p=whTuy3dTqpqxhJKIQzt2eg">
+          <img class="video-thumb" src="images/photo_2025-10-28 01.09.11 1.jpg" alt="Видео 3" />
+          <span class="video-play"></span>
+        </div>
+        <div class="video-card" data-video="5a3db0def7370790901aab1e6328f949?p=whTuy3dTqpqxhJKIQzt2eg">
+          <img class="video-thumb" src="images/Group 127.jpg" alt="Видео 4" />
+          <span class="video-play"></span>
+        </div>
+        <div class="video-card" data-video="5a3db0def7370790901aab1e6328f949?p=whTuy3dTqpqxhJKIQzt2eg">
+          <img class="video-thumb" src="images/moving-boxes-truck.jpg" alt="Видео 5" />
+          <span class="video-play"></span>
+        </div>
+        <div class="video-card" data-video="5a3db0def7370790901aab1e6328f949?p=whTuy3dTqpqxhJKIQzt2eg">
+          <img class="video-thumb" src="images/otgruzka-gruzovyh-konteinerov-zeleznodoroznym-transportom.png" alt="Видео 6" />
+          <span class="video-play"></span>
+        </div>
+        <div class="video-card" data-video="5a3db0def7370790901aab1e6328f949?p=whTuy3dTqpqxhJKIQzt2eg">
+          <img class="video-thumb" src="images/truck-shipping-port.jpg" alt="Видео 7" />
+          <span class="video-play"></span>
+        </div>
+        <div class="video-card" data-video="5a3db0def7370790901aab1e6328f949?p=whTuy3dTqpqxhJKIQzt2eg">
+          <img class="video-thumb" src="images/transport-logistics-concept.jpg" alt="Видео 8" />
+          <span class="video-play"></span>
+        </div>
+      </div>
+      <div id="video-dots" class="video-dots"></div>
+    </div>
+  </section>
+
+  
+
+    <section id="lead-mini" class="section">
+      <div class="container">
+        <div class="mini">
+          <div class="mini-left">
+            <h2 class="mini-title">Найдём товар в Китае по вашему запросу и <span class="mini-hl">получим самое выгодное предложение</span> от поставщика</h2>
+            <p class="mini-desc">Мы поможем найти, выкупить и доставить товары из Китая на самых выгодных условиях</p>
+            <form id="mini-form" class="mini-form">
+              <input type="email" name="email" placeholder="orlov_dima@mail.ru" required class="mini-input" />
+              <input type="text" name="name" placeholder="Иван Иванов" required class="mini-input" />
+              <button type="submit" class="mini-btn">Оставить заявку</button>
+            </form>
+            <div class="mini-policy">Нажимая кнопку отправить заявку вы соглашаетесь с <a href="#" class="mini-policy-link">Политикой обработки персональных данных</a></div>
+          </div>
+          <div class="mini-right">
+            <img src="images/dragon.png" alt="Дракон" class="mini-dragon" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    
+    
+    
+    
+    
+
+    <section id="team-advanced" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Команда Orlov Logistics</h2>
+        <div class="team-hero">
+          <div class="team-hero-left">
+            <span class="priority-badge">Наш приоритет</span>
+            <p class="priority-text">Быть точкой опоры для предпринимателей, объединяя глубокий опыт, современные знания и технологические решения в одном месте, чтобы каждый бизнес‑клиент мог развиваться уверенно, быстро и эффективно вместе с нами</p>
+          </div>
+          <div class="team-hero-right">
+            <img src="images/432 (1) (1).png" alt="Логотип" class="team-logo" />
+          </div>
+        </div>
+        <!-- Desktop layout -->
+        <div class="team-layout">
+          <div class="team-left">
+            <div class="team-card team-card--large">
+              <img src="images/Орлов.jpg" alt="Дмитрий Орлов" class="team-photo" />
+              <div class="member-glass member-glass--center"><b>Дмитрий Орлов</b><span>Основатель Orlov Logistics</span></div>
+            </div>
+          </div>
+          <div class="team-right">
+            <div class="team-mini-grid">
+              <div class="team-card">
+                <img src="images/китаец 3.jpg" alt="Китаец 1" class="team-photo" />
+                <div class="member-glass member-glass--stack"><b>Китаец 1</b><span>Главный бухгалтер</span></div>
+              </div>
+              <div class="team-card">
+                <img src="images/Женщина.jpg" alt="Сотрудник" class="team-photo" />
+                <div class="member-glass member-glass--stack"><b>Сотрудник</b><span>Логистика</span></div>
+              </div>
+              <div class="team-card">
+                <img src="images/китаец 4.jpg" alt="Китаец 2" class="team-photo" />
+                <div class="member-glass member-glass--stack"><b>Китаец 2</b><span>Менеджер проектов</span></div>
+              </div>
+              <div class="team-card">
+                <img src="images/китаец 2.png" alt="Китаец 3" class="team-photo" />
+                <div class="member-glass member-glass--stack"><b>Китаец 3</b><span>Аналитик</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile slider -->
+        <div class="team-slider" id="team-slider">
+          <div class="team-card">
+            <img src="images/Орлов.jpg" alt="Дмитрий Орлов" class="team-photo" />
+            <div class="member-glass member-glass--center"><b>Дмитрий Орлов</b><span>Основатель Orlov Logistics</span></div>
+          </div>
+          <div class="team-card">
+            <img src="images/китаец 3.jpg" alt="Китаец 1" class="team-photo" />
+            <div class="member-glass member-glass--stack"><b>Китаец 1</b><span>Главный бухгалтер</span></div>
+          </div>
+          <div class="team-card">
+            <img src="images/Женщина.jpg" alt="Сотрудник" class="team-photo" />
+            <div class="member-glass member-glass--stack"><b>Сотрудник</b><span>Логистика</span></div>
+          </div>
+          <div class="team-card">
+            <img src="images/китаец 4.jpg" alt="Китаец 2" class="team-photo" />
+            <div class="member-glass member-glass--stack"><b>Китаец 2</b><span>Менеджер проектов</span></div>
+          </div>
+          <div class="team-card">
+            <img src="images/китаец 2.png" alt="Китаец 3" class="team-photo" />
+            <div class="member-glass member-glass--stack"><b>Китаец 3</b><span>Аналитик</span></div>
+          </div>
+        </div>
+        <div id="team-dots" class="video-dots"></div>
+      </div>
+    </section>
+
+    <section id="reviews-clients" class="section">
+      <div class="container">
+        <h2 class="section-title">Отзывы наших клиентов</h2>
+        <div class="video-grid">
+          <div class="video-card" data-video="5a3db0def7370790901aab1e6328f949?p=whTuy3dTqpqxhJKIQzt2eg">
+            <img class="video-thumb" src="images/отзыв-1.jpeg" alt="Отзыв 1" />
+            <span class="video-play"></span>
+          </div>
+          <div class="video-card" data-video="5a3db0def7370790901aab1e6328f949?p=whTuy3dTqpqxhJKIQzt2eg">
+            <img class="video-thumb" src="images/отзыв-2.jpeg" alt="Отзыв 2" />
+            <span class="video-play"></span>
+          </div>
+          <div class="video-card" data-video="5a3db0def7370790901aab1e6328f949?p=whTuy3dTqpqxhJKIQzt2eg">
+            <img class="video-thumb" src="images/отзыв-3.jpeg" alt="Отзыв 3" />
+            <span class="video-play"></span>
+          </div>
+          <div class="video-card" data-video="5a3db0def7370790901aab1e6328f949?p=whTuy3dTqpqxhJKIQzt2eg">
+            <img class="video-thumb" src="images/отзыв-4.jpeg" alt="Отзыв 4" />
+            <span class="video-play"></span>
+          </div>
+          <div class="video-card" data-video="5a3db0def7370790901aab1e6328f949?p=whTuy3dTqpqxhJKIQzt2eg">
+            <img class="video-thumb" src="images/image-5.jpg" alt="Отзыв 5" />
+            <span class="video-play"></span>
+          </div>
+          <div class="video-card" data-video="5a3db0def7370790901aab1e6328f949?p=whTuy3dTqpqxhJKIQzt2eg">
+            <img class="video-thumb" src="images/image-6.jpg" alt="Отзыв 6" />
+            <span class="video-play"></span>
+          </div>
+        </div>
+        <div id="video-dots-clients" class="video-dots"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-block">
+          <img src="images/фон-форма.png" alt="" class="contact-bg" />
+          <img src="assets/icons/image33.svg" alt="" class="contact-line contact-line--top" />
+          <img src="assets/icons/image33.svg" alt="" class="contact-line contact-line--left" />
+          <div class="contact-left">
+            <h2 class="contact-title">Мы предоставляем наилучшие условия для<br> наших клиентов</h2>
+            <ul class="contact-features">
+              <li><img src="assets/icons/image 6.svg" alt="%" class="feature-icon" /><span>Отсутствие комиссии за выкуп</span></li>
+              <li><img src="assets/icons/image 10.svg" alt="Персональный менеджер" class="feature-icon" /><span>Персональный менеджер</span></li>
+              <li><img src="assets/icons/image 9.svg" alt="$" class="feature-icon" /><span>Выгодный курс валют</span></li>
+            </ul>
+              <div class="contact-photo">
+                <div class="contact-slider">
+                  <img src="images/слайдер-авиа.jpg" alt="Авиа" class="active" data-title="Авиа" data-sub="До 6 дней" />
+                  <img src="images/слайдер-авто.jpg" alt="Авто" data-title="Авто" data-sub="10–14 дней" />
+                  <img src="images/слайдер-жд.jpg" alt="Ж/Д" data-title="Ж/Д" data-sub="От 25 дней" />
+                  <img src="images/слайдер-морем.jpg" alt="Морем" data-title="Морем" data-sub="От 40 дней" />
+                </div>
+                <div class="contact-caption">
+                  <div class="cap-title">Авиа</div>
+                  <div class="cap-sub">До 6 дней</div>
+                </div>
+              </div>
+          </div>
+          <div class="contact-right">
+            <div class="contact-form-card">
+              <h3 class="contact-subtitle grad-text">Получите расчет стоимости</h3>
+              <form id="contact-form" class="contact-form">
+                <input type="text" name="name" placeholder="Ваше имя" required class="contact-input" />
+                <input type="tel" name="phone" placeholder="Ваш номер" required class="contact-input" />
+                <input type="email" name="email" placeholder="Ваш email" required class="contact-input" />
+                <textarea name="comment" placeholder="Ваш комментарий" rows="3" class="contact-input"></textarea>
+                <button type="submit" class="contact-btn">Отправить</button>
+              </form>
+              <div class="contact-policy">Нажимая на кнопку «Отправить», вы соглашаетесь с <a href="#" class="policy-link">Политикой обработки персональных данных</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <h2 class="section-title">Частые вопросы</h2>
+        <div class="faq">
+          <div class="faq-col">
+            <div class="faq-item">
+              <div class="faq-q"><span class="faq-icon"></span><span class="faq-title">Какие ограничения для заказа?</span><button class="faq-toggle" aria-label="Показать ответ"><span class="chev"></span></button></div>
+              <div class="faq-a"><p>Основываясь на наш многолетний опыт в работе с китайскими поставщиками, мы установили ограничения на заказ: 20 поставщиков и не более 50 позиций.</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q"><span class="faq-icon"></span><span class="faq-title">Какую информацию нужно предоставить для заказа?</span><button class="faq-toggle" aria-label="Показать ответ"><span class="chev"></span></button></div>
+              <div class="faq-a"><p>Название товара, количество, ссылки на поставщиков, ваши контактные данные и предпочтения по доставке.</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q"><span class="faq-icon"></span><span class="faq-title">Почему заранее не узнать точную стоимость доставки?</span><button class="faq-toggle" aria-label="Показать ответ"><span class="chev"></span></button></div>
+              <div class="faq-a"><p>Итоговая стоимость зависит от веса, объёма, стоимости товара и типа перевозки, а также динамики тарифов.</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q"><span class="faq-icon"></span><span class="faq-title">Нужна ли страховка и что она покрывает?</span><button class="faq-toggle" aria-label="Показать ответ"><span class="chev"></span></button></div>
+              <div class="faq-a"><p>Страховка оформляется по желанию клиента и покрывает утрату или повреждение товара при транспортировке.</p></div>
+            </div>
+          </div>
+          <div class="faq-col">
+            <div class="faq-item">
+              <div class="faq-q"><span class="faq-icon"></span><span class="faq-title">Как оформить заказ?</span><button class="faq-toggle" aria-label="Показать ответ"><span class="chev"></span></button></div>
+              <div class="faq-a"><p>Опишите процесс оформления заказа: сбор информации, подача заявки, подтверждение условий.</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q"><span class="faq-icon"></span><span class="faq-title">Какие ограничения по перевозке товара?</span><button class="faq-toggle" aria-label="Показать ответ"><span class="chev"></span></button></div>
+              <div class="faq-a"><p>Перевозке не подлежат запрещённые к ввозу товары, а также те, для которых требуются особые разрешения или лицензии.</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q"><span class="faq-icon"></span><span class="faq-title">Как упаковка может повлиять на стоимость товара?</span><button class="faq-toggle" aria-label="Показать ответ"><span class="chev"></span></button></div>
+              <div class="faq-a"><p>Габариты и вес упаковки могут увеличить стоимость доставки, особенно при расчёте по объёмному весу.</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q"><span class="faq-icon"></span><span class="faq-title">Куда доставляем?</span><button class="faq-toggle" aria-label="Показать ответ"><span class="chev"></span></button></div>
+              <div class="faq-a"><p>Доставка возможна по всей России и в страны СНГ, уточняйте детали у менеджера.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="foot-brand">
+            <img src="images/logo.png" alt="Orlov Logistics" class="foot-logo" />
+            <a href="#" class="foot-link">Политика конфиденциальности</a>
+            <div class="foot-small">© 20245. Orlov Logictics. Все права защищены.</div>
+            <div class="foot-small">Доставка товаров из Китая</div>
+          </div>
+          <div class="foot-col foot-delivery">
+            <div class="footer-title">Доставка</div>
+            <ul class="footer-list">
+              <li><a href="#delivery">Авто</a></li>
+              <li><a href="#delivery">Авиа</a></li>
+              <li><a href="#delivery">Морем</a></li>
+              <li><a href="#delivery">Ж/Д</a></li>
+            </ul>
+          </div>
+          <div class="foot-col foot-nav">
+            <div class="footer-title">Навигация</div>
+            <ul class="footer-list">
+              <li><a href="#services">Услуги</a></li>
+              <li><a href="#team-advanced">Команда</a></li>
+              <li><a href="#reviews-video">Отзывы</a></li>
+              <li><a href="#delivery">Доставка</a></li>
+            </ul>
+          </div>
+          <div class="foot-col">
+            <div class="footer-title">Социальные сети</div>
+            <ul class="footer-list">
+              <li><a href="#">Telegram</a></li>
+              <li><a href="#">VK</a></li>
+              <li><a href="#">Whatsapp</a></li>
+            </ul>
+          </div>
+          <div class="foot-col foot-contacts">
+            <div class="footer-title">Контакты</div>
+            <div class="footer-icons">
+              <a href="https://wa.me/" aria-label="WhatsApp" class="foot-icon" target="_blank" rel="noopener"><img src="assets/icons/Whatsapp.svg" alt="WhatsApp" /></a>
+              <a href="https://t.me/" aria-label="Telegram" class="foot-icon" target="_blank" rel="noopener"><img src="assets/icons/tg.svg" alt="Telegram" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
