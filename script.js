@@ -97,13 +97,43 @@ if (logo) {
 }
 const heroMap = document.querySelector('.hero-map')
 if (heroMap) {
-  const baseY = -60
-  window.addEventListener('scroll', () => {
-    if (window.innerWidth > 900) {
-      const y = baseY + window.scrollY * 0.08
-      heroMap.style.transform = `translateX(-50%) translateY(${y}px)`
+  const hero = document.querySelector('.hero')
+  if (hero) {
+    let rafId = null
+    const updateMap = () => {
+      if (window.innerWidth > 900) {
+        const heroRect = hero.getBoundingClientRect()
+        const scrollY = window.scrollY || window.pageYOffset
+        const heroOffsetTop = hero.offsetTop
+        const heroHeight = hero.offsetHeight || heroRect.height
+        
+        if (heroRect.top < window.innerHeight && heroRect.bottom > 0) {
+          const scrollProgress = Math.max(0, Math.min(1, (window.innerHeight - heroRect.top) / (window.innerHeight + heroHeight)))
+          const baseY = -60
+          const maxMovement = 30
+          const y = baseY + scrollProgress * maxMovement
+          heroMap.style.transform = `translateX(-50%) translateY(${y}px)`
+        } else if (heroRect.bottom <= 0) {
+          heroMap.style.transform = `translateX(-50%) translateY(-30px)`
+        } else {
+          heroMap.style.transform = `translateX(-50%) translateY(-60px)`
+        }
+      } else {
+        heroMap.style.transform = `translateX(-50%) translateY(0px)`
+      }
     }
-  })
+    
+    window.addEventListener('scroll', () => {
+      if (rafId) return
+      rafId = requestAnimationFrame(() => {
+        updateMap()
+        rafId = null
+      })
+    }, { passive: true })
+    
+    window.addEventListener('resize', updateMap, { passive: true })
+    updateMap()
+  }
 }
 const slider = document.querySelector('.promo-slider .slides')
 if (slider) {
