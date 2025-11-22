@@ -99,7 +99,6 @@ const heroMap = document.querySelector('.hero-map')
 if (heroMap) {
   const baseY = -60
   window.addEventListener('scroll', () => {
-    // Отключаем анимацию карты при прокрутке на мобильных устройствах
     if (window.innerWidth > 900) {
       const y = baseY + window.scrollY * 0.08
       heroMap.style.transform = `translateX(-50%) translateY(${y}px)`
