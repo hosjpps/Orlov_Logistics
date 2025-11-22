@@ -99,8 +99,11 @@ const heroMap = document.querySelector('.hero-map')
 if (heroMap) {
   const baseY = -60
   window.addEventListener('scroll', () => {
-    const y = baseY + window.scrollY * 0.08
-    heroMap.style.transform = `translateX(-50%) translateY(${y}px)`
+    // Отключаем анимацию карты при прокрутке на мобильных устройствах
+    if (window.innerWidth > 900) {
+      const y = baseY + window.scrollY * 0.08
+      heroMap.style.transform = `translateX(-50%) translateY(${y}px)`
+    }
   })
 }
 const slider = document.querySelector('.promo-slider .slides')
@@ -113,13 +116,35 @@ if (slider) {
     const dots = Array.from(dotsEl.querySelectorAll('.video-dot'))
     dots.forEach((d, n) => d.classList.toggle('active', n === idx))
   }
+  const setFixedHeight = () => {
+    if (window.innerWidth <= 900) {
+      // На мобильных используем максимальную высоту из всех слайдов
+      const heights = slides.map(s => {
+        s.style.display = 'flex'
+        const h = s.offsetHeight
+        s.style.display = ''
+        return h
+      })
+      const maxHeight = Math.max(...heights, 200)
+      slider.style.height = maxHeight + 'px'
+    } else {
+      // На десктопе динамическая высота
+      const activeSlide = slides.find(s => s.classList.contains('active'))
+      if (activeSlide) {
+        slider.style.height = activeSlide.offsetHeight + 'px'
+      }
+    }
+  }
   const show = i => {
     slides.forEach((s, n) => s.classList.toggle('active', n === i))
-    slider.style.height = slides[i].offsetHeight + 'px'
+    if (window.innerWidth > 900) {
+      slider.style.height = slides[i].offsetHeight + 'px'
+    }
     idx = i
     setActiveDots()
   }
   show(idx)
+  setFixedHeight()
   if (dotsEl) {
     slides.forEach((_, i) => {
       const b = document.createElement('button')
@@ -133,7 +158,10 @@ if (slider) {
   if (dotsEl) {
     dotsEl.addEventListener('click', () => { clearInterval(auto); auto = setInterval(() => show((idx + 1) % slides.length), 6000) })
   }
-  window.addEventListener('resize', () => show(idx))
+  window.addEventListener('resize', () => {
+    setFixedHeight()
+    show(idx)
+  })
 }
 
 const serviceCards = document.querySelectorAll('#services .card')
