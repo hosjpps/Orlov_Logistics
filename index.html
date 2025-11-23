@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=glass3" />
+    <link rel="icon" href="assets/icons/Logo прозрачный 2.svg" type="image/svg+xml" />
+    <link rel="icon" href="images/logo.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+    <link rel="mask-icon" href="assets/icons/Logo прозрачный 2.svg" color="#017BC5" />
   </head>
   <body>
     <header class="site-header">
@@ -713,6 +717,16 @@
       </div>
     </footer>
 
+    <div id="thanks-modal" class="thanks-modal" aria-label="Заявка отправлена" role="dialog" aria-modal="true">
+      <div class="thanks-card">
+        <p class="thanks-title">Спасибо за Вашу заявку!</p>
+        <p class="thanks-sub">Мы свяжемся с Вами в ближайшее время.</p>
+        <div class="thanks-actions">
+          <button type="button" class="thanks-btn btn-grad" id="thanks-close">Ок</button>
+        </div>
+      </div>
+    </div>
+    <script src="env.js"></script>
     <script src="script.js"></script>
   </body>
   <div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="true" aria-label="Согласие на cookie">

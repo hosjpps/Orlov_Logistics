@@ -1452,3 +1452,17 @@ box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -10px 30px rgba(0,0,0,0
 .cookie-banner .btn-decline { background: #ffffff; color: #101217; border: 1px solid var(--border); box-shadow: 0 6px 14px rgba(0,0,0,0.10); }
 @media (max-width: 640px) { .cookie-banner { left: 12px; right: 12px; bottom: 12px; } }
 .slide--shipping .slide-items { margin-bottom: 20px; }
+/* Thanks modal */
+.thanks-modal { position: fixed; inset: 0; display: none; place-items: center; z-index: 2147483647; background: rgba(16,18,23,0.35); backdrop-filter: blur(6px); }
+.thanks-modal.show { display: grid; }
+.thanks-card { max-width: 560px; width: calc(100% - 40px); border-radius: 18px; padding: 18px 20px; background:
+  radial-gradient(320px 220px at 26% 22%, rgba(255,255,255,0.55), rgba(255,255,255,0) 60%),
+  linear-gradient(180deg, rgba(245,247,250,0.85), rgba(235,238,243,0.70));
+  backdrop-filter: blur(10px) saturate(140%) contrast(102%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%) contrast(102%);
+  border: 1px solid rgba(255,255,255,0.75);
+  color: #0f1218; box-shadow: inset 0 1px 0 rgba(255,255,255,0.60), 0 12px 26px rgba(0,0,0,0.16); text-align: center; }
+.thanks-title { font-size: 20px; font-weight: 800; margin: 0 0 8px; }
+.thanks-sub { font-size: 15px; margin: 0 0 14px; }
+.thanks-actions { display: flex; gap: 10px; justify-content: center; }
+.thanks-btn { height: 40px; padding: 0 18px; border-radius: 999px; font-weight: 700; cursor: pointer; }

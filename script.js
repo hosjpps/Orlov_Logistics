@@ -9,12 +9,20 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el))
 const track = document.getElementById('services-track')
 
 const form = document.getElementById('contact-form')
+const openThanks = () => {
+  const m = document.getElementById('thanks-modal')
+  if (!m) return
+  m.classList.add('show')
+  const btn = m.querySelector('#thanks-close')
+  if (btn) btn.onclick = () => m.classList.remove('show')
+  m.addEventListener('click', (e) => { if (e.target === m) m.classList.remove('show') })
+}
 if (form) {
   form.addEventListener('submit', e => {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(form))
     sendToTelegram(data)
-    alert('Заявка отправлена. Мы свяжемся с вами.\n' + JSON.stringify(data, null, 2))
+    openThanks()
     form.reset()
   })
 }
@@ -25,7 +33,7 @@ if (miniForm) {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(miniForm))
     sendToTelegram(data)
-    alert('Заявка отправлена.\n' + JSON.stringify(data, null, 2))
+    openThanks()
     miniForm.reset()
   })
 }
@@ -390,15 +398,57 @@ try {
   })
 } catch (_) {}
 
+function resolveChatId() {
+  try {
+    const cfg = window.TG_CONFIG || {}
+    const lsGroup = localStorage.getItem('tg.groupId')
+    if (cfg.groupId || lsGroup) return Promise.resolve(String(cfg.groupId || lsGroup))
+    if (!cfg.token) return Promise.resolve(null)
+    const url = `https://api.telegram.org/bot${cfg.token}/getUpdates`
+    const proxied = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`
+    return fetch(proxied)
+      .then(r => r.text())
+      .then(t => { try { return JSON.parse(t) } catch(_) { return {} } })
+      .then(j => {
+        const arr = (j.result || [])
+        const getGroupChat = (u) => {
+          const mc = u.my_chat_member && u.my_chat_member.chat
+          const msg = u.message && u.message.chat
+          const post = u.channel_post && u.channel_post.chat
+          return [mc, msg, post].find(c => c && (c.type === 'supergroup' || c.type === 'group'))
+        }
+        const upd = arr.slice().reverse().find(u => getGroupChat(u))
+        const chat = upd ? getGroupChat(upd) : null
+        const id = chat ? String(chat.id) : null
+        if (id) { localStorage.setItem('tg.groupId', id); cfg.groupId = id }
+        return id
+      })
+      .catch(() => null)
+  } catch (_) { return Promise.resolve(null) }
+}
+
 function sendToTelegram(payload) {
   try {
     const cfg = window.TG_CONFIG || {}
-    if (!cfg.token || !cfg.chatId) return Promise.resolve()
+    const token = cfg.token || localStorage.getItem('tg.token')
+    const groupId = cfg.groupId || localStorage.getItem('tg.groupId')
+    cfg.token = token
+    cfg.groupId = groupId
+    if (cfg.proxy) {
+      const body = { payload }
+      return fetch(cfg.proxy, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).catch(() => {})
+    }
+    if (!cfg.token) return Promise.resolve()
     const text = Object.entries(payload).map(([k, v]) => `${k}: ${v}`).join('\n')
-    return fetch(`https://api.telegram.org/bot${cfg.token}/sendMessage`, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: cfg.chatId, text })
-    }).catch(() => {})
+    return resolveChatId().then(id => {
+      if (!id) return
+      const q = new URLSearchParams({ chat_id: id, text }).toString()
+      const apiUrl = `https://api.telegram.org/bot${cfg.token}/sendMessage?${q}`
+      const proxied = `https://api.allorigins.win/raw?url=${encodeURIComponent(apiUrl)}`
+      return fetch(proxied).catch(() => {
+        try { const img = new Image(); img.src = apiUrl } catch(_) {}
+      })
+    })
   } catch (_) { return Promise.resolve() }
 }
 
@@ -454,3 +504,11 @@ try {
     document.addEventListener('keydown', e => { if (e.key === 'Escape') close() })
   }
 } catch (_) {}
+document.addEventListener('DOMContentLoaded', () => {
+  const closeBtn = document.getElementById('thanks-close')
+  const modal = document.getElementById('thanks-modal')
+  if (closeBtn && modal) {
+    closeBtn.addEventListener('click', () => modal.classList.remove('show'))
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('show') })
+  }
+})
