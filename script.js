@@ -510,4 +510,57 @@ document.addEventListener('DOMContentLoaded', () => {
     closeBtn.addEventListener('click', () => modal.classList.remove('show'))
     modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('show') })
   }
+  try {
+    const tracks = Array.from(document.querySelectorAll('.slide-ticker .ticker-track'))
+    const apply = () => {
+      const isMobile = window.innerWidth <= 900
+      const pxPerSec = isMobile ? 120 : 90
+      tracks.forEach(t => {
+        if (!t.dataset.loopPrepared) {
+          t.dataset.loopPrepared = '1'
+          const html = t.innerHTML
+          t.innerHTML = html + html
+        }
+        t.style.animation = 'none'
+        t.style.color = '#fff'
+        // rAF smooth scroll
+        cancelAnimationFrame(t._raf || 0)
+        let x = parseFloat(t.dataset.x || '0')
+        const step = (ts, prevTs) => {
+          const dt = prevTs ? (ts - prevTs) / 1000 : 0
+          x -= pxPerSec * dt
+          const half = t.scrollWidth / 2
+          if (x <= -half) x += half
+          t.style.transform = `translate3d(${x}px,0,0)`
+          t._raf = requestAnimationFrame((nextTs) => step(nextTs, ts))
+        }
+        t._raf = requestAnimationFrame((ts) => step(ts, ts))
+      })
+    }
+    apply()
+    window.addEventListener('resize', apply)
+  } catch (_) {}
+
+// Mobile: open delivery overlays on tap
+try {
+  const setupDeliveryTap = () => {
+    const isMobile = window.innerWidth <= 900
+    const cards = Array.from(document.querySelectorAll('.deliver-card'))
+    let openCard = null
+    cards.forEach(c => {
+      c.removeEventListener('click', c._tapHandler || (()=>{}))
+      if (!isMobile) { c.classList.remove('open'); return }
+      const handler = (e) => {
+        e.preventDefault()
+        if (openCard && openCard !== c) openCard.classList.remove('open')
+        c.classList.toggle('open')
+        openCard = c.classList.contains('open') ? c : null
+      }
+      c._tapHandler = handler
+      c.addEventListener('click', handler)
+    })
+  }
+  setupDeliveryTap()
+  window.addEventListener('resize', setupDeliveryTap)
+} catch (_) {}
 })
